@@ -73,6 +73,7 @@ public class ChatsFragment extends Fragment {
                     protected void onBindViewHolder(@NonNull final ChatsViewHolder holder, int position, @NonNull Contacts model)
                     {
                         final  String usersIDs =getRef(position).getKey();
+
                         usersRef.child(usersIDs).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

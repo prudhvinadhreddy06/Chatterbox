@@ -39,7 +39,7 @@
         
         
         <ImageButton
-            android:id="@+id/sen_message_btn"
+            android:id="@+id/send_message_btn"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:src="@drawable/send_message"/>
