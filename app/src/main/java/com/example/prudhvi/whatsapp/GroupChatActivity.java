@@ -1,5 +1,6 @@
 package com.example.prudhvi.whatsapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
@@ -37,6 +39,7 @@ import java.util.Iterator;
 public class GroupChatActivity extends AppCompatActivity {
 
     private Toolbar myToolbar;
+    private Button Exit;
     private ImageButton sendMessageButton;
     private EditText userInputMessage;
     private ScrollView mScrollView;
@@ -76,8 +79,17 @@ public class GroupChatActivity extends AppCompatActivity {
         });
 
 
+        Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exitFromGroup();
+            }
+        });
+
 
     }
+
+
 
 
     @Override
@@ -129,6 +141,7 @@ public class GroupChatActivity extends AppCompatActivity {
         userInputMessage=(EditText) findViewById(R.id.input_group_messgae);
         mScrollView=(ScrollView) findViewById(R.id.my_scroll_view);
         displayTextMessage=(TextView) findViewById(R.id.group_chat_text_display);
+        Exit=(Button)findViewById(R.id.button2);
     }
 
     private void getUserInfo() {
@@ -203,5 +216,10 @@ public class GroupChatActivity extends AppCompatActivity {
             mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
 
         }
+    }
+
+    private void exitFromGroup()
+    {
+        groupNameRef.removeValue();
     }
 }
